@@ -18,7 +18,7 @@ const consumer = kafka.consumer({
     autoCommit: false, // the offsets travel inside each transaction instead
   },
   'group.protocol': 'consumer',
-  // One transaction per batch, and each one costs the same however small: this client's default batch is 32.
+  // One transaction per batch, and each costs several round trips however few events it holds: this client's default batch is 32.
   'js.consumer.max.batch.size': Number(process.env.MAX_BATCH ?? 32),
 });
 
