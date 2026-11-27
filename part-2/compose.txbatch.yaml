@@ -1,0 +1,6 @@
+# Lab only: runs invoicer-tx-batch.ts, whose batch size comes from MAX_BATCH.
+services:
+  invoicer-tx:
+    command: ["node", "src/invoicer-tx-batch.ts"]
+    environment:
+      MAX_BATCH: ${MAX_BATCH:-32}

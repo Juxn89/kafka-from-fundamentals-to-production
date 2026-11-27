@@ -1,0 +1,7 @@
+# Lab only: runs a variant of the invoicer that the article shows as an excerpt.
+services:
+  invoicer:
+    command: ["node", "src/${VARIANT}"]
+    environment:
+      OUTAGE_AT_S: ${OUTAGE_AT_S:-0}
+      OUTAGE_FOR_S: ${OUTAGE_FOR_S:-0}
